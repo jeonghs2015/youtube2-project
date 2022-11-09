@@ -5,7 +5,7 @@ export default function Videos() {
   const {keyword} = useParams();
   return (
     <div>
-        Videos {keyword}
+        Videos {keyword ? `🔎${keyword}` : '🛕hot trends'}
     </div>
   )
 }
