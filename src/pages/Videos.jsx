@@ -5,6 +5,7 @@ import VideoCard from '../components/VideoCard';
 import Youtube, { search } from '../api/youtube';
 import FakeYoutube from '../api/fakeYoutube';
 
+
 export default function Videos() {
   const { keyword } = useParams();
   const {
@@ -12,7 +13,7 @@ export default function Videos() {
     error,
     data: videos,
   } = useQuery(['videos', keyword], async () => {
-    const youtube = new Youtube();
+    const youtube = new FakeYoutube();
     return youtube.search(keyword);
   });
   return (
